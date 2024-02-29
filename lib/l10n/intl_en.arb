@@ -1,0 +1,6 @@
+{
+    "responseBodyIsEmpty":"Response body is empty",
+    "errorDuringParsingWebServiceResponse": "Error during parsing web service response",
+    "empty": "Empty"
+
+}

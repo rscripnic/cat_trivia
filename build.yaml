@@ -1,0 +1,23 @@
+targets:
+  $default:
+    builders:
+      source_gen|combining_builder:
+        generate_for:
+          - lib/**.dart
+        options:
+          build_extensions:
+        #     # I want this line to "work":
+        #     # '^lib/**/{{}}.dart': 'lib/generated/model/{{}}.g.dart'
+            'lib/{{}}/{{file}}.dart': 'lib/{{}}/freezed/{{file}}.g.dart'
+      freezed:
+        options:
+          build_extensions:
+            # I want this line to "work":
+            # '^lib/**/{{}}.dart': 'lib/generated/model/{{}}.freezed.dart'
+            'lib/{{}}/{{file}}.dart': 'lib/{{}}/freezed/{{file}}.freezed.dart'
+          field_rename: none
+          explicit_to_json: true
+      json_serializable:
+        options:
+          field_rename: none
+          explicit_to_json: true
